@@ -5,7 +5,10 @@
 body {}
 
 nav {
+    display: flex;
+    justify-content: center;
     background-color: aqua;
+    margin-bottom: 10px;
 }
 
 .container {
@@ -23,12 +26,29 @@ nav {
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(4, 200px);
-    grid-template-rows: repeat(5, 200px);
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(5,1fr);
     gap: 20px;
 }
 
 .gallery>*{
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
+}
+
+.canvas-container{
+    display: none;
+}
+
+.input{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1rem;
+    width: 80%
+}
+
+.editor{
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    width:50%
 }

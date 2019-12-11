@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 
-<body onload="init()">
+<body onload="init()" >
     <nav>
         <div class="main-menu container">
 
@@ -22,14 +22,29 @@
 
         </div>
     </nav>
-    <!-- <main class="container gallery">
-        <img src="" alt="">
-        
-    </main> -->
+    <main class="container gallery">
+        <!-- <img class="first" src="img/1.jpg" alt=""> -->
 
-    <canvas id="my-canvas" width="500" height="500" onclick="draw(event)">
+    </main>
+    <div class="canvas-container">
+        <canvas id="meme-canvas" width="500" height="500" >
+            Update your browser to enjoy canvas!
+        </canvas>
+        <div class="editor">
+            <input onkeyup="onTyping()" class="input" type="text" placeholder="Enter the text of your meme">
+            <div class="control-panel">
+
+                <button class="increase-text" onclick="onFontChane(1)">A+</button>
+                <button class="decrese-text" onclick="onFontChane(-1)">A-</button>
+                <button class="up" onmousedown="onMoveLine(-1)" >Up</button>
+                <button class="Down" onmousedown="onMoveLine(1)">Down</button>
+                <!-- onmouseup="stopMove()" -->
+            </div>
+        </div>
+    </div>
+    <!-- <canvas id="meme-canvas container" width="500" height="500" onclick="draw(event)">
         Update your browser to enjoy canvas!
-    </canvas>
+    </canvas> -->
 
     <script src="./js/gallery-service.js"></script>
     <script src="./js/meme-service.js"></script>
