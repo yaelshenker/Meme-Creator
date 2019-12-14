@@ -9,13 +9,13 @@
     <title>Document</title>
 </head>
 
-<body onload="init()" >
+<body onload="init()">
     <nav>
         <div class="main-menu container">
 
-            <div>Logo</div>
+            <div class="logo">MemGem!</div>
             <ul class="options">
-                <li>Gallery</li>
+                <li onclick="onGalleryClick()"> Gallery</li>
                 <li>Memes</li>
                 <li>About</li>
             </ul>
@@ -26,21 +26,40 @@
         <!-- <img class="first" src="img/1.jpg" alt=""> -->
 
     </main>
-    <div class="canvas-container">
-        <canvas id="meme-canvas" width="500" height="500" >
+    <div id="main-container" class="canvas-container">
+        <canvas id="meme-canvas" class="canvas-main" width="200" height="200">
             Update your browser to enjoy canvas!
         </canvas>
         <div class="editor">
-            <input onkeyup="onTyping()" class="input" type="text" placeholder="Enter the text of your meme">
+            <input onkeyup="onTyping()" class="input" type="text" placeholder="Enter Text">
             <div class="control-panel">
 
                 <button class="increase-text" onclick="onFontChane(1)">A+</button>
                 <button class="decrese-text" onclick="onFontChane(-1)">A-</button>
-                <button class="up" onmousedown="onMoveLine(-1)" >Up</button>
+                <button class="up" onmousedown="onMoveLine(-1)">Up</button>
                 <button class="Down" onmousedown="onMoveLine(1)">Down</button>
+                <button class="first-row" onclick="onsSwitchRow(1)">&#8645</button>
+                <input type="color" class="color" onchange="onColorChange(this)" value="#ffffff">
+                <button><a href="#" onclick="downloadCanvas(this)" download="">📥</a></button>
+                <button class="add" onclick="onAddLine()">Add</button>
+                <!-- <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
+                    <input name="img" id="imgData" type="hidden" />
+                    <button class="share-container" class="btn" type="submit">Publish</button>
+                    <div class="share-container"></div>
+                    
+                </form> -->
+
+
+                <!-- <button class="second-row" onclick="onsSwitchRow(1)">Down</button> -->
                 <!-- onmouseup="stopMove()" -->
             </div>
         </div>
+    </div>
+    <div class="memes-galley">
+
+    </div>
+    <div class="footer logo">
+        MemGem!
     </div>
     <!-- <canvas id="meme-canvas container" width="500" height="500" onclick="draw(event)">
         Update your browser to enjoy canvas!
@@ -49,6 +68,7 @@
     <script src="./js/gallery-service.js"></script>
     <script src="./js/meme-service.js"></script>
     <script src="./js/main.js"></script>
+    
 </body>
 
 </html>
