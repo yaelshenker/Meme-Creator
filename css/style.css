@@ -76,6 +76,10 @@ nav {
    /* height: 120px; */
 }
 
+.memes-item{
+   width:100%
+}
+
 .gallery-img {
    width: 100%;
    height: 100%;
@@ -83,11 +87,10 @@ nav {
 
 .canvas-container {
    display: none;
-   justify-content: space-between;
-    align-items: flex-start;
-    flex-grow: 1;
-    padding: 0 10px;
-    width: 80%;
+   align-items: flex-start;
+   flex-grow: 1;
+   padding: 0 10px;
+   width: 80%;
 }
 
 .canvas-main {
@@ -106,7 +109,8 @@ nav {
    flex-direction: column;
    padding-left: 20px;
    /* width: 50%; */
-   flex-grow: 1;
+   /* flex-grow: 1; */
+   width: 335px;
    
 }
 
@@ -123,7 +127,7 @@ nav {
    border-radius: 5px;
    background-color: darkcyan;
    border: 1px solid gray;
-   font-size: 1.4em;
+   font-size: 1.2rem;
    font-family: monospace;
    cursor: pointer;
 }
@@ -134,6 +138,7 @@ nav {
    background-color: darkcyan;
    border: 1px solid gray;
    cursor: pointer;
+   font-size: 1.2rem;
 }
 
 
@@ -154,6 +159,10 @@ nav {
    display: flex;
    align-items: center;
    justify-content: center;
+}
+
+.memes-gallery{
+   display: none;
 }
 
 @media (max-width: 740px) {
@@ -190,6 +199,7 @@ nav {
       font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
       font-size: 1rem;
       width: 100%;
+      padding: 10px;
       /* width: 100vw; */
    }
    .options {
@@ -218,13 +228,23 @@ nav {
       border-radius: 5px;
       background-color: darkcyan;
       border: 1px solid gray;
-      font-size: 1em;
+      font-size: 1rem;
       font-family: monospace;
       cursor: pointer;
    }
 
    .footer{
       padding: 30px
+   }
+
+   .share-container{
+      width: fit-content;
+      height: 100%;
+      width: 100%;
+      background-color: darkcyan;
+      border: 1px solid gray;
+      cursor: pointer;
+      font-size: 1.2rem;
    }
 }
 

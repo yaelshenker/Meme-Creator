@@ -1,5 +1,5 @@
-gMemes=[]
-gMeme = {
+var gSavedMemes;
+var gMeme = {
     selectedImgId: null, selectedTxtIdx: 0,
     txts: [{ line: '', size: 30, align: 'left', color: '#ffffff', startX: 20, startY: 100, isMarked: true },
     { line: '', size: 30, align: 'left', color: '#ffffff', startX: 20, startY: 400, isMarked: false }]
@@ -14,8 +14,21 @@ function clearMeme(){
 
 }
 
-function saveMeme(){
-    gMemes.push(gMeme)
+function loadSavedMemes(){
+    gSavedMemes=loadFromStorage('memes',null)
+    return gSavedMemes
+}
+
+function saveMemeAsImg(img){
+    if(gSavedMemes){
+        gSavedMemes.push(img)
+    }
+    else{
+        gSavedMemes=[]
+        gSavedMemes.push(img)
+    }
+    saveToStorage('memes',gSavedMemes)
+    
 }
 
 function saveText(txt) {
@@ -53,7 +66,6 @@ function changeTextIdx() {
         gMeme.selectedTxtIdx=0
     }
     else gMeme.selectedTxtIdx++;
-    console.log('idx',gMeme.selectedTxtIdx)
     // gMeme.txts[gMeme.selectedTxtIdx].isMarked = true
     return gMeme.selectedTxtIdx
 
