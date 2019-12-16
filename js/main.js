@@ -41,6 +41,7 @@ function renderMemesGallery() {
    var memes = loadSavedMemes()
    var memesStr = memes.map(function (meme) {
       return `<div class="gallery-item"><img class="memes-item" src="${meme}" alt="">
+      
       </div>`
    })
    var elMemesGallery = document.querySelector('.memes-gallery')
@@ -253,6 +254,7 @@ function downloadCanvas(elLink) {
    elLink.href = data;
    elLink.download = 'my-meme.png';
 }
+
 
 function onAddLine() {
    addText();
